@@ -1,10 +1,16 @@
 import Image from 'next/image';
 import MapEmbed from '@/components/ui/MapEmbed';
 import ScrollAnimation from '@/components/ui/ScrollAnimation';
+import VideoBanner from '@/components/home/VideoBanner';
 
 export default function Home() {
   return (
     <div className="bg-black font-sans min-h-screen">
+      {/* Video Banner Section */}
+      <section className="w-full">
+        <VideoBanner />
+      </section>
+
       {/* First Section - Full Screen */}
       <section className="flex min-h-screen items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="text-center space-y-4 sm:space-y-6 max-w-4xl w-full">
