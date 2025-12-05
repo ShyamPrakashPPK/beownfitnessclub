@@ -24,7 +24,9 @@ export default function About() {
     return (
         <section
             id="about"
-            className="relative min-h-screen w-full flex items-center justify-center px-4 sm:px-8 lg:px-16 py-20 bg-black overflow-hidden"
+            className="relative min-h-screen w-full flex items-center justify-center px-4 sm:px-8 lg:px-16 py-20 bg-black overflow-hidden select-none"
+            onDragStart={(e) => e.preventDefault()}
+            onContextMenu={(e) => e.preventDefault()}
         >
             {/* BACKGROUND DECOR */}
             <div className="absolute inset-0 opacity-5 pointer-events-none">
@@ -38,16 +40,19 @@ export default function About() {
                     {gymImages.map((image, index) => (
                         <div
                             key={index}
-                            className={`absolute inset-0 transition-opacity duration-700 ${index === currentImageIndex ? "opacity-100" : "opacity-0"
+                            className={`absolute inset-0 transition-opacity duration-700 select-none ${index === currentImageIndex ? "opacity-100" : "opacity-0"
                                 }`}
+                            onDragStart={(e) => e.preventDefault()}
                         >
                             <Image
                                 src={image}
                                 alt={`Gym facility ${index + 1}`}
                                 fill
                                 sizes="(max-width: 1024px) 100vw, 40vw"
-                                className="object-cover"
+                                className="object-cover pointer-events-none"
                                 priority={index === 0}
+                                draggable={false}
+                                onDragStart={(e) => e.preventDefault()}
                             />
                         </div>
                     ))}
@@ -70,7 +75,7 @@ export default function About() {
                 {/* RIGHT SIDE */}
                 <div className="relative flex w-full items-start ">
                     {/* VERTICAL TEXT EXACT LIKE REFERENCE */}
-                    <div className="hidden lg:flex flex-col justify-center items-center">
+                    <div className="hidden lg:flex flex-col justify-center items-center select-none">
                         <span
                             className="text-white font-extrabold text-[130px] tracking-widest rotate-180 [writing-mode:vertical-rl]"
                         >
@@ -79,7 +84,7 @@ export default function About() {
                     </div>
 
                     {/* DESCRIPTION */}
-                    <div className="flex-1 text-zinc-300 space-y-6 max-w-2xl">
+                    <div className="flex-1 text-zinc-300 space-y-6 max-w-2xl select-none">
                         <p className="text-lg sm:text-xl leading-relaxed font-medium">
                             Be Own Fitness Club is your premier destination for achieving your
                             fitness goals. Our state-of-the-art facility is fully equipped with
