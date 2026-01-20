@@ -1,6 +1,7 @@
 import VideoBanner from '@/components/home/VideoBanner';
 import About from '@/components/home/About';
 import Trainers from '@/components/home/Trainers';
+import SocialFeed from '@/components/home/SocialFeed';
 import ContactForm from '@/components/home/ContactForm';
 
 export default function Home() {
@@ -17,6 +18,9 @@ export default function Home() {
 
       {/* Trainers Section */}
       <Trainers />
+
+      {/* Social Feed Section */}
+      <SocialFeed />
 
       {/* Contact Section */}
       <ContactForm />
